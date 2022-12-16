@@ -1,0 +1,3 @@
+class Airtel extends TelecomCompany{
+
+}

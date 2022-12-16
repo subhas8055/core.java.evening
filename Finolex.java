@@ -1,0 +1,3 @@
+class Finolex extends Wire{
+
+}
