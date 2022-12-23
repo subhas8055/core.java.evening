@@ -1,3 +1,0 @@
-class Likhith extends Developer{
-
-}

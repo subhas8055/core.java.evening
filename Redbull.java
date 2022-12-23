@@ -1,3 +1,0 @@
-class Redbull extends Drinks{
-
-}

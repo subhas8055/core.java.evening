@@ -1,3 +1,0 @@
-class Oldmonk extends Rum{
-
-}

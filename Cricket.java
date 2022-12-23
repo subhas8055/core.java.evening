@@ -1,3 +1,0 @@
-class Cricket extends Game{
-
-}

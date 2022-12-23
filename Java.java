@@ -1,3 +1,0 @@
-class Java extends Language{
-
-}

@@ -1,3 +1,0 @@
-class Classmate extends Books{
-
-}

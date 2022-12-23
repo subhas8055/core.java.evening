@@ -1,3 +1,0 @@
-class Chair extends Plastic{
-
-}

@@ -1,3 +1,0 @@
-class Silk extends Chocklate{
-
-}

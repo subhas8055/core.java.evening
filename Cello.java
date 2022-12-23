@@ -1,3 +1,0 @@
-class Cello extends Pen{
-
-}

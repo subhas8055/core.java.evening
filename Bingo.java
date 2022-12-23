@@ -1,3 +1,0 @@
-class Bingo extends Chips{
-
-}
