@@ -1,0 +1,103 @@
+1..
+	1. public static void main(String [] args)
+		This method is used to execute the program.
+		JVM will search for the main methid to execute the program.
+		Without this method we cannot execute the programs.
+		In this method 
+			public is a Access specifier  And keyword.
+			static is modifier And Keyword.
+			void is a return type.
+			main is the name of method
+			String [] args represents the array of String type named as args.
+			
+			
+	
+	
+	2	class 
+			Class is blue print or template to develop a software .
+			We can create class using class Keyword.
+			Class is consist of variables, methods and objects.
+			Class is a logical entity.
+			
+			Syntax for the class 
+			class ClassName{
+			
+			
+			}
+			
+			
+		Object 
+			Object is a instance of class.
+			Object is real world entity.
+			Object will be Created if instance variables found in the class with the help of new Keyword.
+			When an object is created a constructor has to be created , else compiler will create a default constructor.
+			
+			
+			Syntax for the object 
+			ClassName refVariable = new ClassName()
+
+	3
+		JVM : Java Virtual Machine
+			JVM is virtually present in JRE but not physically.
+			It provide the run time environment for the java.
+			Class loader will loads  the .clas  files,
+			Byte code verifier will verifies the code line by line.
+			JIT will convert .class code to binary code.
+			
+		JRE : Java Runtime Environment
+			It consist of JVM and set of libraries
+			Runtime is handled by JRE.
+		
+		JDK :Java Development Kit
+			It consist of JRE and some development tools.
+			Compile time is handled by JDK.
+			
+4 		Constructor :
+			It is a special type of method same name as class name without any return type.
+			Constructor is used to initialize instance variables.
+			when we create a object ,costructor is also get created  by the help of compiler,if we not created.
+			
+			Types ;
+			1 . Default constructor
+				It is a constructor without any parameters .
+				If user is not created any constructor compiler will provide default constructor.
+			2 . Parameterised constructor
+				It is a constructor with parameters.
+				The user has to create the parameterised constructor .
+
+7			
+		JVM looks for main method to execute the program, if syntax of main method is changed then JVM will 
+		unable to get program . and program shows some error called "main method not found"
+		
+		Metohods : Is a block of code to perform some function
+			Types:
+			1 .Built in methods
+				These methods are in built in java , we can only use it when required.
+			
+			2 .User defined methods
+			These are the methods  created by user.There are 2 types in this 
+				1 . Static methods
+				Method declared with static keyword 
+				2 . instance Method
+				Method declared without static keyword
+
+9		Class loader is element of JVM which loads the .class files to JVM .
+		Compiler will convert
+
+				
+10 		Yes we can create private constructor, and we can overload the constructor.
+		
+		
+12		Yes we can use by the help of reference variable.			
+				
+		
+			
+		
+		
+		
+		
+		
+		
+		
+		
+			
