@@ -1,54 +1,60 @@
 package com.xworkz.city.city;
 
-import com.xworkz.city.area.Area;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.xworkz.city.area.AreaDTO;
 import com.xworkz.city.exception.AreaNotFoundException;
 
 public class Banglore implements City{
-	Area area[];
-	int i;
+	List<AreaDTO> list = new ArrayList<AreaDTO>();
 	
-	
-		public Banglore(int size) {
-			area =new Area[size];
-		}
 		@Override
-			public Area stay(Area area) {
-				if(area.getAreaId()!=null) {
-					this.area[i++]=area;
-				}return null;
+			public AreaDTO stay(AreaDTO area) {
+				if(area.getAreaId()!=0) {
+					list.add(area);
+				}return area;
 			}
 		@Override
-		public void getstay() {
-				for (Area a : area) {
+		public List<AreaDTO> getstay() {
+				for (AreaDTO a : list) {
 					System.out.println(a);
 				}
+				return list;
 			}
 		@Override
-		public void getAreaById(String areaId) throws AreaNotFoundException{
-			for (Area a : area) {
-				if(a.getAreaId().equals(areaId)) {
+		public List<AreaDTO> getAreaById(int areaId) throws AreaNotFoundException{
+			for (AreaDTO a : list) {
+				if(a.getAreaId()==areaId) {
 					System.out.println(a.getAreaId()+"-"+a.getAreaName()+"-"+a.getCity()+"-"+a.getPincode());
-				}else {
-					throw new AreaNotFoundException("Area not find with givem Area id");
 				}
+//				else {
+//					throw new AreaNotFoundException("Area not find with givem Area id");
+//				}
 					}
+			return list;
 			}
 		@Override
-		public void getAreaByCity(String city) throws AreaNotFoundException{
-			for (Area a : area) {
+		public List<AreaDTO> getAreaByCity(String city) throws AreaNotFoundException{
+			for (AreaDTO a : list) {
 					if(a.getCity().equals(city)) {
-					System.out.println(a.getAreaId()+"-"+a.getAreaName()+"-"+a.getCity()+"-"+a.getPincode());
-				}else {
-					throw new AreaNotFoundException("Area not found in the given city");
+						System.out.println(a);
+//					System.out.println(a.getAreaId()+"-"+a.getAreaName()+"-"+a.getCity()+"-"+a.getPincode());
 				}
+//					else {
+//					throw new AreaNotFoundException("Area not found in the given city");
+//				}
 					}
+			return list;
 			}
 		@Override
-		public void updatePincodeByAreaId(String areaId,int newpincode) {
-			for (Area a : area) {
-					if(a.getAreaId().equals(areaId)) {
+		public List<AreaDTO> updatePincodeByAreaId(int areaId,int newpincode) {
+			for (AreaDTO a : list) {
+					if(a.getAreaId()==areaId) {
 						a.setPincode(newpincode);
-					System.out.println(a.getAreaId()+"-"+a.getAreaName()+"-"+a.getCity()+"-"+a.getPincode());
+						System.out.println(a);
+//					System.out.println(a.getAreaId()+"-"+a.getAreaName()+"-"+a.getCity()+"-"+a.getPincode());
 				}}
+			return list;
 			}
 }

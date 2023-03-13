@@ -1,9 +1,14 @@
 package com.xworkz.railway;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
+import com.xworkz.railway.comparator.CityComparator;
+import com.xworkz.railway.comparator.NumberComparator;
+import com.xworkz.railway.comparator.StationComparator;
 import com.xworkz.railway.exception.PlatformNotFoundException;
-import com.xworkz.railway.platform.Platform;
+import com.xworkz.railway.platform.PlatformDTO;
 import com.xworkz.railway.railwaystation.Ksr;
 import com.xworkz.railway.railwaystation.RailwayStation;
 
@@ -13,20 +18,28 @@ public class RailwayTester {
 		System.out.println("please enter size");
 		int size = scanner.nextInt();
 		
-		Ksr rail = new Ksr(size);
+		Ksr rail = new Ksr();
 
 		for(int i=0;i<size;i++) {
 			System.out.println("please enter platformId");
-			String platformId = scanner.next();
+			int platformId = scanner.nextInt();
 			System.out.println("please enter station");
 			String station = scanner.next();
 			System.out.println("please enter city");
 			String city=scanner.next();
 			System.out.println("please enter noOf platform");
 			int platfor =scanner.nextInt();
-		Platform platform =new Platform(platformId,station,city,platfor);
+		PlatformDTO platform =new PlatformDTO(platformId,station,city,platfor);
 		
 		rail.travel(platform);}
+		List<PlatformDTO> list = rail.getinfo();
+		Collections.sort(list);
+		
+		Collections.sort(list, new CityComparator());
+		
+		Collections.sort(list, new StationComparator());
+		
+		Collections.sort(list, new NumberComparator());
 		System.out.println("enter 1 to get all shop details");
 		System.out.println("enter 2 to get shop details by Id");
 		System.out.println("enter 3 to update shop name by Id");

@@ -1,110 +1,107 @@
 package com.xworkz.managerapp.showroom;
 
-import com.xworkz.managerapp.manager.Manager;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.xworkz.managerapp.manager.ManagerDTO;
 
 public class BMW implements Showroom1 {
-
+List<ManagerDTO> list = new ArrayList<ManagerDTO>();
 	
-	Manager manager[];
-
-	int i;
-
-	public BMW() {
-
-	}
-
-	public BMW(int size) {
-		manager = new Manager[size];
-
-	}
 @Override
-	public String saveManager(Manager manager) {
+	public String saveManager(ManagerDTO manager) {
 		System.out.println("method 1 start");
-		if (manager.getManagerName() != null && !(manager.getManagerName().isEmpty())) {
-			this.manager[i++] = manager;
-
+		if (manager.getManagerName() != null && !(manager.getManagerName().isEmpty()) && manager!=null) {
+			list.add(manager);
 		}
-		return "qwerty";
+		return null;
 	}
 @Override
-	public void getDetails() {
-		System.out.println("method 2 start");
-		for (Manager m : manager) {
+	public List<ManagerDTO> getDetails() {
+		
+		for (ManagerDTO m : list) {
 			System.out.println(m);
 		}
+		return list;
 	}
 @Override
-	public Manager getManagerbyQualification(String qualification) {
+	public List<ManagerDTO> getManagerbyQualification(String qualification) {
 		System.out.println("method 3 start");
-		for (Manager m : manager) {
+		for (ManagerDTO m : list) {
 			if (m.getQualification().equals(qualification)) {
+				System.out.println(list);
 
-				System.out.println(m.getManagerID() + " " + m.getManagerName() + " "
-						+ m.getAddress() + " " + m.getContactNo() + " "
-						+ m.getQualification() + " " + m.getGender());
+//				System.out.println(m.getManagerID() + " " + m.getManagerName() + " "
+//						+ m.getAddress() + " " + m.getContactNo() + " "
+//						+ m.getQualification() + " " + m.getGender());
 			}
 		}
 
-		return null;
+		return list;
 	}
 @Override
-	public Manager getManagerNameByAdress(String address) {
+	public List<ManagerDTO> getManagerNameByAdress(String address) {
 		System.out.println("method By Adress start");
-		for (Manager m : manager) {
-			System.out.println("method start");
+		for (ManagerDTO m : list) {
 			if (m.getAddress().equals(address)) {
-
-				System.out.println(m.getManagerID() + " " + m.getManagerName() + " "
-						+ m.getAddress() + " " + m.getContactNo() + " "
-						+ m.getQualification() + " " + m.getGender());
-
-			}
+					System.out.println(list);
+//				System.out.println(m.getManagerID() + " " + m.getManagerName() + " "
+//						+ m.getAddress() + " " + m.getContactNo() + " "
+//						+ m.getQualification() + " " + m.getGender());
+//
+//			
+				}
 
 		}
 
-		return null;
+		return list;
 	}
 @Override
-	public Manager getManagerBymanagerID(int managerID) {
-	for (Manager m : manager) {
+	public List<ManagerDTO> getManagerBymanagerID(int managerID) {
+	for (ManagerDTO m : list) {
 
 			if (m.getManagerID() == managerID) {
-				System.out.println("method by ID start");
-				System.out.println(m.getManagerID() + " " + m.getManagerName() + " "
-						+ m.getAddress() + " " + m.getContactNo() + " "
-						+ m.getQualification() + " " + m.getGender());
+				System.out.println(list);
 			}
+//				System.out.println("method by ID start");
+//				System.out.println(m.getManagerID() + " " + m.getManagerName() + " "
+//						+ m.getAddress() + " " + m.getContactNo() + " "
+//						+ m.getQualification() + " " + m.getGender());
+//			
+			
 		}
-		return null;
+		return list;
 	}
 @Override
-	public String getManagerByGender(String gender) {
-	for (Manager m : manager) {
-			if (m.getGender() == gender) {
-				System.out.println("method by gender start");
-				System.out.println(m.getManagerID() + " " + m.getManagerName() + " "
-						+ m.getAddress() + " " + m.getContactNo() + " "
-						+ m.getQualification() + " " + m.getGender());
+	public List<ManagerDTO> getManagerByGender(String gender) {
+	for (ManagerDTO m : list) {
+			if (m.getGender().equalsIgnoreCase(gender)) {
+				System.out.println(list);
+//				System.out.println("method by gender start");
+//				System.out.println(m.getManagerID() + " " + m.getManagerName() + " "
+//						+ m.getAddress() + " " + m.getContactNo() + " "
+//						+ m.getQualification() + " " + m.getGender());
 
 			}
 		}
-		return null;
+		return list;
 	}
 @Override
-	public Manager updateNumberById(long newcontactNo, int managerID) {
+	public List<ManagerDTO> updateNumberById(long newcontactNo, int managerID) {
 		System.out.println("method update by ID start");
-		for (Manager m : manager) {
+		for (ManagerDTO m : list) {
 			if (m.getManagerID() == managerID) {
 				m.setContactNo(newcontactNo);
-				// System.out.println(m.contactNo);
-				System.out.println(m.getManagerID() + " " + m.getManagerName() + " "
-						+ m.getAddress() + " " + m.getContactNo() + " "
-						+ m.getQualification() + " " + m.getGender());
+				System.out.println(list);
+//				// System.out.println(m.contactNo);
+//				System.out.println(m.getManagerID() + " " + m.getManagerName() + " "
+//						+ m.getAddress() + " " + m.getContactNo() + " "
+//						+ m.getQualification() + " " + m.getGender());
 
 			}
 		}
 
-		return null;
+		return list;
 	}
 
 }

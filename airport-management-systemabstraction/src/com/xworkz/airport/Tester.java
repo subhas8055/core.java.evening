@@ -1,8 +1,10 @@
 package com.xworkz.airport;
 
+import java.util.Collections;
 import java.util.Scanner;
 
 import com.xworkz.airport.airports.KIA;
+import com.xworkz.airport.comparator.NameComparator;
 import com.xworkz.airport.exception.TerminalNotFoundException;
 import com.xworkz.airport.terminal.Terminal;
 
@@ -25,6 +27,8 @@ public static void main(String[] args) {
 		Terminal terminal =new Terminal(terminalId,terminalName,city,nos);
 		k.trip(terminal);	
 	}
+List<TeminalDTO> list = 
+	Collections.sort(list, new NameComparator());
 	String answer= "yes";
 	do {
 		System.out.println("enter 1 to fetch all terminal details");

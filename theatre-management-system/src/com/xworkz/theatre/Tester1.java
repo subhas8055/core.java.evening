@@ -2,7 +2,7 @@ package com.xworkz.theatre;
 
 import java.util.Scanner;
 
-import com.xworkz.theatre.screen.Screen;
+import com.xworkz.theatre.screen.ScreenDTO;
 import com.xworkz.theatre.theatres.Theatre;
 
 public class Tester1 {
@@ -21,7 +21,7 @@ public static void main(String[] args) {
 		System.out.println("please enter nos");
 		int  nos = sc.nextInt();
 		System.out.println(nos);
-		Screen screen = new Screen();
+		ScreenDTO screen = new ScreenDTO();
 		//Theatre theatre = new Theatre();
 		
 		System.out.println(screen.getScreenId() +" " +screen.getMovieName() +" " +screen.getTiming() +" " +screen.getNoOfScreens());

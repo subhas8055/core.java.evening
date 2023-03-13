@@ -1,70 +1,73 @@
 package com.xworkz.bankapp.bank;
 
-import com.xworkz.bankapp.customer.Customer;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.xworkz.bankapp.customer.CustomerDTO;
 
 public class Bank {
-	Customer customer[];
-	int i ;
-
-	public Bank(int size) {
-		customer = new Customer[size];
-	}
-
-	public Customer saveDetails(Customer customer) {
+	List<CustomerDTO> list = new ArrayList<CustomerDTO>();
+	public CustomerDTO saveDetails(CustomerDTO customer) {
 		//boolean isAdded = false;
 		if(customer.getName() != null && customer.getName() != ""){
-			this.customer[i++]= customer;
+			list.add(customer);
 			//isAdded = true;
 		}
 		
-	return null;}
+	return customer;}
 	
 	
-	public void getDetails() {
-		for(int i=0;i<customer.length;i++) {
-			System.out.println(customer[i].getName() +" "+customer[i].getAccountNo() +" "+customer[i].getAccountId() +" "+customer[i].getContactNo());
+	public List<CustomerDTO> getDetails() {
+		for (CustomerDTO c : list) {
+			System.out.println(c);
+		
+			//System.out.println(c.getName() +" "+c.getAccountNo() +" "+c.getAccountId() +" "+c.getContactNo());
 		}
+		return list;
 		
 	}
-	public Customer getById(String accountId) {
-		for(int i=0;i<customer.length;i++) {
-			
-			if(customer[i].getAccountId().equals( accountId)) {
-				System.out.println(customer[i].getName() +" "+customer[i].getAccountNo() +" "+customer[i].getAccountId() +" "+customer[i].getContactNo());			
+	public List<CustomerDTO> getById(int accountId) {
+for (CustomerDTO c : list) {			
+			if(c.getAccountId()== accountId) {
+				System.out.println(c);
+				//System.out.println(c.getName() +" "+c.getAccountNo() +" "+c.getAccountId() +" "+c.getContactNo());			
 			}
 		}
 		
-	return null;}
-	public Customer getByName(String name) {
-		for (int i = 0; i <customer.length; i++) {
-			if(customer[i].getName().equals(name)) {
-				System.out.println(customer[i].getName() +" "+customer[i].getAccountNo() +" "+customer[i].getAccountId() +" "+customer[i].getContactNo());			
-				return customer[i];
+	return list;}
+	public List<CustomerDTO> getByName(String name) {
+		for (CustomerDTO c : list) {
+			if(c.getName().equals(name)) {
+				System.out.println(c);
+				//System.out.println(c.getName() +" "+c.getAccountNo() +" "+c.getAccountId() +" "+c.getContactNo());			
+				return list;
 			}
 			
 		}
-		return null;
+		return list;
 	}
-public Customer updateNameById(String newName,String accountId) {
-	for (int i = 0; i < customer.length; i++) {
-		if(customer[i].getAccountId().equals(accountId)) {
-			customer[i].setName(newName);
-			System.out.println(customer[i].getName() +" "+customer[i].getAccountNo() +" "+customer[i].getAccountId() +" "+customer[i].getContactNo());	
-			return customer[i];
+public List<CustomerDTO> updateNameById(String newName,int accountId) {
+for (CustomerDTO c : list) {
+	if(c.getAccountId()==accountId) {
+			c.setName(newName);
+			System.out.println(c);
+			//System.out.println(c.getName() +" "+c.getAccountNo() +" "+c.getAccountId() +" "+c.getContactNo());	
+			return list;
 		}
 	}
 	
-return null;}
-public Customer updateNumberById(long newNumber,String accountId) {
-	for (int i = 0; i < customer.length; i++) {
-		if(customer[i].getAccountId().equals(accountId)) {
-			customer[i].setContactNo(newNumber);
-			System.out.println(customer[i].getName() +" "+customer[i].getAccountNo() +" "+customer[i].getAccountId() +" "+customer[i].getContactNo());	
-			return customer[i];
+return list;}
+public List<CustomerDTO> updateNumberById(long newNumber,int accountId) {
+for (CustomerDTO c : list) {
+	if(c.getAccountId()==accountId) {
+			c.setContactNo(newNumber);
+			System.out.println(c);
+			//System.out.println(c.getName() +" "+c.getAccountNo() +" "+c.getAccountId() +" "+c.getContactNo());	
+			return list;
 		}
 	}
 	
-return null;}
+return list;}
 	
 	
 }

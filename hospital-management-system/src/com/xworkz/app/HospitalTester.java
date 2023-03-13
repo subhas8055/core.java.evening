@@ -1,12 +1,19 @@
 package com.xworkz.app;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
+import com.xworkz.app.comparator.AgeComparator;
+import com.xworkz.app.comparator.BloodGroupComparator;
+import com.xworkz.app.comparator.EmailComparator;
+import com.xworkz.app.comparator.NameComparator;
 import com.xworkz.app.exception.EmailNotFoundException;
 import com.xworkz.app.exception.PatientNotFoundException;
 import com.xworkz.app.hospital.Appolo;
 import com.xworkz.app.hospital.Hospital;
 import com.xworkz.app.patient.Patient;
+import com.xworkz.app.patient.PatientDTO;
 
 public class HospitalTester {
 
@@ -18,7 +25,7 @@ public class HospitalTester {
 		int size = scanner.nextInt();
 
 		
-		Appolo hospital = new Appolo(size);
+		Hospital hospital = new Appolo();
 		for(int i=0;i<size;i++) {
 			System.out.println("please enter patientName");
 			String patientName = scanner.next();
@@ -33,9 +40,21 @@ public class HospitalTester {
 			System.out.println("please enter email");
 			String email =scanner.next();
 
-			Patient patient =new Patient(patientName,patientID,bloodGroup,gender,age,email);
+			PatientDTO patient =new PatientDTO(patientName,patientID,bloodGroup,gender,age,email);
 			hospital.admit(patient);
 		}
+		
+		List<PatientDTO> list = hospital.getDetails();
+		Collections.sort(list);
+		System.out.println(list);
+		Collections.sort(list, new NameComparator());
+		
+		Collections.sort(list, new EmailComparator());
+
+		Collections.sort(list, new AgeComparator());
+
+		Collections.sort(list, new BloodGroupComparator());
+
 		int option =0;
 		String answer ="yes";   // "Yes"
 

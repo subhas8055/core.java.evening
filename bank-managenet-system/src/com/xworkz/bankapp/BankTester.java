@@ -1,16 +1,22 @@
 package com.xworkz.bankapp;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 import com.xworkz.bankapp.bank.Bank;
+import com.xworkz.bankapp.comparator.AccountNoComparator;
+import com.xworkz.bankapp.comparator.ContactNoComparator;
+import com.xworkz.bankapp.comparator.NameComparator;
 import com.xworkz.bankapp.customer.Customer;
+import com.xworkz.bankapp.customer.CustomerDTO;
 
 public class BankTester extends Object {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("please enter size");
 		int size = sc.nextInt();
-		Bank bank = new Bank(size);
+		Bank bank = new Bank();
 		for(int i=0;i<size;i++) {
 		
 		System.out.println("please enter name");
@@ -18,11 +24,22 @@ public class BankTester extends Object {
 		System.out.println("please enter contactNo");
 		long contactNo = sc.nextLong();
 		System.out.println("please enter Account Id");
-		String accountId = sc.next();
+		int accountId = sc.nextInt();
 		System.out.println("please enter account No");
 		long accountNo = sc.nextLong();
-		Customer customer = new Customer(name,accountNo,contactNo,accountId);
+		CustomerDTO customer = new CustomerDTO(name,accountNo,contactNo,accountId);
 		bank.saveDetails(customer);}
+		List<CustomerDTO> list = bank.getDetails();
+		Collections.sort(list);
+		System.out.println(list);
+		Collections.sort(list, new NameComparator());
+		System.out.println(list);
+		Collections.sort(list, new ContactNoComparator());
+		System.out.println(list);
+		Collections.sort(list, new AccountNoComparator());
+		System.out.println(list);
+		
+		
 		System.out.println("enter 1 to fetch all customer details");
 		System.out.println("enter 2 to get customers details  by using accountId ");
 		System.out.println("enter 3 to get customer details by using name ");

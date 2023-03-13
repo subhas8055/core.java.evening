@@ -6,7 +6,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+import com.xworkz.distribution.comparator.GenderComparator;
+import com.xworkz.distribution.comparator.LocationComparator;
 import com.xworkz.distribution.comparator.NameComparator;
+import com.xworkz.distribution.comparator.NumberComparator;
 import com.xworkz.distribution.distributor.constant.Gender;
 import com.xworkz.distribution.distributor.dto.SalesPersonDTO;
 import com.xworkz.distribution.subhas.Distributor;
@@ -44,16 +47,19 @@ public static void main(String[] args) {
 			List<SalesPersonDTO> list = distributor.getAll();
 			System.out.println("list size is "+list.size());
 
-			System.out.println("sort by id ");
-	Collections.sort(list);
-	for (SalesPersonDTO s : list) {
-		System.out.println(s);
-	}
+		Collections.sort(list);
+	System.out.println(list);
 	System.out.println("sort by name ");
 		Collections.sort(list ,new NameComparator());
-		for (SalesPersonDTO s : list) {
-			System.out.println(s);
-		}
+		System.out.println(list);
+		
+		Collections.sort(list ,new LocationComparator());
+
+		Collections.sort(list ,new GenderComparator());
+		
+		Collections.sort(list ,new NumberComparator());
+
+
 //	System.out.println(list);
 //		Iterator as=list.iterator();
 //		while(as.hasNext()) {
