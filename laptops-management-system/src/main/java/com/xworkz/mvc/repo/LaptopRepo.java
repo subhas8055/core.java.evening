@@ -19,5 +19,9 @@ public interface LaptopRepo {
 	public LaptopDTO updateById(int id);
 
 	public LaptopDTO update(LaptopDTO dto);
+
+	public List<LaptopDTO> deleteById(int id);
+
+	public List<LaptopDTO> search(String colors, String rams, String names);
 	
 }

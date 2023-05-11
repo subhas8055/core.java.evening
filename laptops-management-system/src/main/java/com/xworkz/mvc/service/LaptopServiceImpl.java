@@ -13,33 +13,35 @@ public class LaptopServiceImpl implements LaptopService{
 	LaptopRepo repo;
 	@Override
 	public LaptopDTO validateAndSave(LaptopDTO dto) {
-		 boolean isNamePresent = false;
-		  boolean isColorPresent = false;
-		  boolean isRamPresent = false;
-		  
+		boolean isNamePresent = false;
+		boolean isColorPresent = false;
+		boolean isRamPresent = false;
 
-		  if(dto.getName() != null && !dto.getName().isEmpty()) {
-		    isNamePresent = true;
-		  }
-		 
-		  if(dto.getColor() != null && !dto.getColor().isEmpty()) {
-		    isColorPresent = true;
-		  }
-		  
-		  if(dto.getRam() != null && !dto.getRam().isEmpty()) {
-		    isRamPresent = true;
-		  }
-		  
-		  if(isNamePresent==true && isColorPresent==true &&  isRamPresent==true) {
-			  repo.save(dto);
-		  
-		  }
-		
+
+		if(dto.getName() != null && !dto.getName().isEmpty()) {
+			isNamePresent = true;
+		}
+
+		if(dto.getColor() != null && !dto.getColor().isEmpty()) {
+			isColorPresent = true;
+		}
+
+		if(dto.getRam() != null && !dto.getRam().isEmpty()) {
+			isRamPresent = true;
+		}
+
+		if(isNamePresent==true && isColorPresent==true &&  isRamPresent==true) {
+			repo.save(dto);
+
+		}else {
+			System.out.println("data is empty");
+		}
+
 		return dto;
 	}
 	@Override
 	public List<LaptopDTO> validateAndGet() {
-List<LaptopDTO> list  =repo.getLaptop();
+		List<LaptopDTO> list  =repo.getLaptop();
 		return list;
 	}
 	@Override
@@ -66,32 +68,43 @@ List<LaptopDTO> list  =repo.getLaptop();
 	@Override
 	public LaptopDTO validateAndUpdate1(LaptopDTO dto) {
 		LaptopDTO dt= new LaptopDTO();
-		 boolean isNamePresent = false;
-		  boolean isColorPresent = false;
-		  boolean isRamPresent = false;
-		  
+		boolean isNamePresent = false;
+		boolean isColorPresent = false;
+		boolean isRamPresent = false;
 
-		  if(dto.getName() != null && !dto.getName().isEmpty()) {
-		    isNamePresent = true;
-		  }
-		 
-		  if(dto.getColor() != null && !dto.getColor().isEmpty()) {
-		    isColorPresent = true;
-		  }
-		  
-		  if(dto.getRam() != null && !dto.getRam().isEmpty()) {
-		    isRamPresent = true;
-		  }
-		  
-		  if(isNamePresent==true && isColorPresent==true &&  isRamPresent==true) {
+
+		if(dto.getName() != null && !dto.getName().isEmpty()) {
+			isNamePresent = true;
+		}
+
+		if(dto.getColor() != null && !dto.getColor().isEmpty()) {
+			isColorPresent = true;
+		}
+
+		if(dto.getRam() != null && !dto.getRam().isEmpty()) {
+			isRamPresent = true;
+		}
+
+		if(isNamePresent==true && isColorPresent==true &&  isRamPresent==true) {
 			dt = repo.update(dto);
-		  
-		  }
-		
+
+		}
+
 		return dt;
 	}
-	
-	
-	
+	@Override
+	public List<LaptopDTO> validateAndDelete(int id) {
+
+		return repo.deleteById(id);
+
+
 	}
+	@Override
+	public List<LaptopDTO> validateAndSearch3(String colors, String rams, String names) {
+		return repo.search(colors,rams,names);
+	}
+
+
+
+}
 

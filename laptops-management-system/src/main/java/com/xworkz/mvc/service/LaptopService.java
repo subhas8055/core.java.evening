@@ -18,4 +18,8 @@ public interface LaptopService {
 	public LaptopDTO validateAndUpdate(int id);
 
 	public LaptopDTO validateAndUpdate1(LaptopDTO dto);
+
+	public List<LaptopDTO> validateAndDelete(int id);
+
+	public List<LaptopDTO> validateAndSearch3(String colors, String rams, String names);
 }
