@@ -6,7 +6,7 @@ import com.xworkz.mvc.dto.LaptopDTO;
 
 public interface LaptopRepo {
 
-	public LaptopDTO save(LaptopDTO dto);
+	public void save(LaptopDTO dto);
 
 	public List<LaptopDTO> getLaptop();
 

@@ -9,6 +9,7 @@
 <body>
 <h1>welcome to our application </h1>
 <h1>your_Laptop brand name is ${nam}</h1>
+<a href="index.jsp"> home </a>
 
 
 

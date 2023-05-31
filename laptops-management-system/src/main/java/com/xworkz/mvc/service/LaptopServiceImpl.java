@@ -52,11 +52,13 @@ public class LaptopServiceImpl implements LaptopService{
 	}
 	@Override
 	public List<LaptopDTO> validateAndSearch1(String ram) {
+		System.out.println(ram);
 		List<LaptopDTO> list =repo.searchLaptop1(ram);
 		return list;
 	}
 	@Override
 	public List<LaptopDTO> validateAndSearch2(String color) {
+		System.out.println(color);
 		List<LaptopDTO> list =repo.searchLaptop2(color);
 		return list;
 	}

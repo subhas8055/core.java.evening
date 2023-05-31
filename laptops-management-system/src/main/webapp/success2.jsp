@@ -33,12 +33,15 @@ text-decoration: none;
 
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script type="text/javascript"> 
 
+
+</script>
 </head>
 <body>
-<h1 >List of Laptops</h1>
+<h1 >List of Laptops</h1><a href="index.jsp">home</a>
 <table  class="container" border="3" width="30%" >  
-<tr><th>Sl.No</th><th>Name</th><th>Ram</th><th>Color</th><th style="width: 200px">Action</th></tr>  
+<tr><th>Sl.No</th><th>Name</th><th>Ram</th><th>Color</th><th style="width: 200px">Action</th></tr>
    <c:forEach var="lap" items="${data}">   
    <tr> 
    <td>${lap.getId()}</td>   

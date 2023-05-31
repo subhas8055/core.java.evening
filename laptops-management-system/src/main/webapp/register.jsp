@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>register</title>
+
 <style type="text/css">
 
 body{
@@ -30,14 +31,14 @@ font-style: italic;
 <form action="register" method="post">
 <table>
 <tr>
-<td>Name :</td><td><input type="text" name="name"></td></tr>
+<td>Name :</td><td><input type="text" name="name" ></td></tr>
 <tr><td>Ram :</td><td><input type="text" name="ram"></td></tr>
 <tr><td>Color :</td><td><input type="text" name="color"></td></tr>
 <!--<tr><td>Collection :</td><td><input type="number" name="collection"></td></tr>
 <!-- <tr><td>Email :</td><td><input type="email" name="email"></td></tr> -->
 <tr><td>
 
-<input type="submit" value="submit"></td></tr>
+<input type="submit" value="submit" ></td></tr>
 </table>
 </form>
 </center>

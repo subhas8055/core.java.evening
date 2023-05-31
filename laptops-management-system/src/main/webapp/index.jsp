@@ -34,6 +34,8 @@ background-color: lime;
 width: 79%;
 height:10%;
 background-position: center;
+text-decoration: none;
+
 }
 
 </style>

@@ -28,11 +28,11 @@ import com.xworkz.mvc.service.LaptopService;
 public class LaptopController {
 	@Autowired
 	LaptopService service;
-	
+
 	public LaptopController() {
 		System.out.println("LaptopController");
 	}
-	
+
 	@PostMapping("/register")
 	public String registerLaptop(@ModelAttribute LaptopDTO dto, HttpServletRequest req) {
 		service.validateAndSave(dto);
@@ -43,70 +43,80 @@ public class LaptopController {
 	public String getLaptop(HttpServletRequest req) {
 		List<LaptopDTO> list=	service.validateAndGet();
 		req.setAttribute("data",list);
-		
+
 		return "success2";
-		
+
 	}
 	@GetMapping("/searchbyname")
 	public  String searchByName(@RequestParam("names") String names,HttpServletRequest req) {
 		List<LaptopDTO> list = service.validateAndSearch(names);
-		
+
 		req.setAttribute("data", list);
-		
-		
-		
+
+
+
 		return "success2";
-		
+
 	}
 	@GetMapping("/searchbyram")
 	public  String searchByRam(@RequestParam("ram") String ram,HttpServletRequest req) {
 		List<LaptopDTO> list = service.validateAndSearch1(ram);
-		
+
 		req.setAttribute("data", list);
 		return "success2";
-		
+
 	}
 	@GetMapping("/searchbycolor")
 	public  String searchByColor(@RequestParam("color") String color,HttpServletRequest req) {
+		System.out.println(color);
 		List<LaptopDTO> list = service.validateAndSearch2(color);
-		
+
 		req.setAttribute("data", list);
-		
-		
-		
+
+
+
 		return "success2";}
 	@GetMapping("/searchbyall")
 	public  String searchByAll(@RequestParam() String colors,String rams,String names,HttpServletRequest req) {
 		List<LaptopDTO> list = service.validateAndSearch3(colors,rams,names);
-		req.setAttribute("data", list);
-		return "success2";}
-	
+		if(list!=null) {
+			req.setAttribute("data", list);
+			return "success2";
+		}else {
+			req.setAttribute("data", "NO DATA FOUND WITH GIVEN DETAILS");
+
+		}
+		return null;}
+
 	@GetMapping("/update/{id}")
 	public  String updateById(@PathVariable("id") int id,HttpServletRequest req) {
-	LaptopDTO dto = service.validateAndUpdate(id);
-		
+		LaptopDTO dto = service.validateAndUpdate(id);
+
 		req.setAttribute("lap", dto);	
 		RedirectView view = new RedirectView();
-	view.setUrl(req.getContextPath()+"/ ");
+		view.setUrl(req.getContextPath()+"/ ");
 		return "update";}
-	
+
 	@PostMapping("/updateandsave")
 	public String updateById1(@ModelAttribute LaptopDTO dto,HttpServletRequest req) {
 		LaptopDTO dto1 = service.validateAndUpdate1(dto);
-			
-			req.setAttribute("lap", dto1);	
-			RedirectView view = new RedirectView();
-			view.setUrl(req.getContextPath()+"/ ");
-		
+
+		req.setAttribute("lap", dto1);	
+
+
 		return "success";
-		
+
 	}
-//@RequestMapping(value="/delete/{id}",method = RequestMethod.DELETE)
 	@GetMapping("/delete/{id}")
-	public  String deleteById(@PathVariable("id") int id,HttpServletRequest req) {
-	List<LaptopDTO> list = service.validateAndDelete(id);
-		
+	public  RedirectView deleteById(@PathVariable("id") int id,HttpServletRequest req) {
+
+		List<LaptopDTO> list = service.validateAndDelete(id);
+
 		req.setAttribute("data", list);	
-		return "success2";}
-		
+		RedirectView view = new RedirectView();
+		view.setUrl(req.getContextPath());
+		view.setUrl(req.getContextPath()+"/listoflaptops ");
+		return view ;
+	}
+
 }
