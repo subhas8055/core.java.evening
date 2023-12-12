@@ -1,0 +1,94 @@
+{
+  "Config": [
+    {
+      "name": "Status",
+      "group": "Status",
+      "enabled": true
+    },
+    {
+      "name": "Inbox",
+      "group": "Messages",
+      "enabled": true
+    },
+    {
+      "name": "OutBox",
+      "group": "Messages",
+      "enabled": true
+    },
+    {
+      "name": "Sent",
+      "group": "Messages",
+      "enabled": true
+    },
+    {
+      "name": "Attachments",
+      "group": "Messages",
+      "enabled": true
+    },
+    {
+      "name": "Info Messages",
+      "group": "Messages",
+      "enabled": true
+    },
+    {
+      "name": "Request data",
+      "group": "Messages",
+      "enabled": true
+    },
+    {
+      "name": "Get message",
+      "group": "Messages",
+      "enabled": true
+    },
+    {
+      "name": "Fetch New Data",
+      "group": "Messages",
+      "enabled": true
+    },
+    {
+      "name": "System Credentials",
+      "group": "Password",
+      "enabled": true
+    },
+    {
+      "name": "New Password",
+      "group": "Password",
+      "enabled": true
+    },
+    {
+      "name": "HTTP Timeout",
+      "group": "Others",
+      "enabled": true
+    },
+    {
+      "name": "Notification",
+      "group": "Others",
+      "enabled": true
+    },
+    {
+      "name": "Location Tracking",
+      "group": "Others",
+      "enabled": true
+    },
+    {
+      "name": "Logs",
+      "group": "Others",
+      "enabled": true
+    },
+    {
+      "name": "Send App DB",
+      "group": "Others",
+      "enabled": true
+    },
+    {
+      "name": "Clear data",
+      "group": "Others",
+      "enabled": true
+    },
+    {
+      "name": "About Us",
+      "group": "Info",
+      "enabled": true
+    }
+  ]
+}
